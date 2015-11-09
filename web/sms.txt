@@ -1,0 +1,26 @@
+array (
+)array (
+  'msisdn' => '40748638647',
+  'to' => '32460201039',
+  'messageId' => '030000009F6DDE18',
+  'text' => 'T3s',
+  'type' => 'unicode',
+  'keyword' => 'T3S',
+  'message-timestamp' => '2015-11-06 16:16:47',
+)array (
+  'msisdn' => '40748638647',
+  'to' => '447480635456',
+  'messageId' => '02000000874B4A51',
+  'text' => 'Rst rjdkf',
+  'type' => 'unicode',
+  'keyword' => 'RST',
+  'message-timestamp' => '2015-11-06 16:17:16',
+)array (
+  'msisdn' => '40748638647',
+  'to' => '447480635461',
+  'messageId' => '02000000874B612B',
+  'text' => 'Yhrfu',
+  'type' => 'unicode',
+  'keyword' => 'YHRFU',
+  'message-timestamp' => '2015-11-06 16:18:54',
+)

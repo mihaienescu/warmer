@@ -1,0 +1,7 @@
+madrivo_warmer_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: MadrivoWarmerBundle:Default:index }
+
+madrivo_warmer_sms_callback:
+    path: /sms/{network}/{number}/callback
+    defaults: { _controller: MadrivoWarmerBundle:Sms:index }
