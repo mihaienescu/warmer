@@ -17,6 +17,10 @@ class SmsController extends Controller
 
         $iParams = $request->query->all();
 
+        if (!isset($iParams['msisdn'])) {
+          return JsonResponse::create('NO PARAMETERS');
+        }
+
         $list = new SmsList();
         $list->setNumberFrom($iParams['msisdn']);
         $list->setNumberTo($iParams['to']);
