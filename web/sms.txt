@@ -23,4 +23,28 @@ array (
   'type' => 'unicode',
   'keyword' => 'YHRFU',
   'message-timestamp' => '2015-11-06 16:18:54',
-)
+)array (
+  'msisdn' => '40748638647',
+  'to' => '32460201039',
+  'messageId' => '0200000087DB9B01',
+  'text' => 'Yrhdhdj',
+  'type' => 'unicode',
+  'keyword' => 'YRHDHDJ',
+  'message-timestamp' => '2015-11-09 10:58:32',
+)array (
+  'msisdn' => '40748638647',
+  'to' => '32460201039',
+  'messageId' => '03000000A008D417',
+  'text' => 'Sula mea',
+  'type' => 'unicode',
+  'keyword' => 'SULA',
+  'message-timestamp' => '2015-11-09 10:57:32',
+)array (
+  'msisdn' => '40748638647',
+  'to' => '32460201039',
+  'messageId' => '03000000A008E0F3',
+  'text' => 'Vgy',
+  'type' => 'unicode',
+  'keyword' => 'VGY',
+  'message-timestamp' => '2015-11-09 10:58:45',
+)'40748638647'40748638647407486386474074863864740748638647

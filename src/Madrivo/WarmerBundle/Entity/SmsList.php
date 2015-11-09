@@ -9,7 +9,6 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Madrivo\WarmerBundle\Entity\SmsListRepository")
- * @ORM\HasLifecycleCallbacks
  */
 class SmsList
 {
@@ -25,12 +24,12 @@ class SmsList
     /**
      * @ORM\Column(type="string", nullable=false)
      */
-    protected $from;
+    protected $numberFrom;
 
     /**
      * @ORM\Column(type="string", nullable=false)
      */
-    protected $to;
+    protected $numberTo;
 
     /**
      * @ORM\Column(type="string", nullable=false)
@@ -45,12 +44,13 @@ class SmsList
     /**
      * @ORM\Column(type="datetime", nullable=true)
      */
-    protected $when;
+    protected $networkTimestamp;
 
     /**
     * @ORM\Column(type="integer", nullable=false)
     */
-    protected $used;
+    protected $parsed;
+
 
 
     /**
@@ -64,51 +64,51 @@ class SmsList
     }
 
     /**
-     * Set from
+     * Set numberFrom
      *
-     * @param string $from
+     * @param string $numberFrom
      *
      * @return SmsList
      */
-    public function setFrom($from)
+    public function setNumberFrom($numberFrom)
     {
-        $this->from = $from;
+        $this->numberFrom = $numberFrom;
 
         return $this;
     }
 
     /**
-     * Get from
+     * Get numberFrom
      *
      * @return string
      */
-    public function getFrom()
+    public function getNumberFrom()
     {
-        return $this->from;
+        return $this->numberFrom;
     }
 
     /**
-     * Set to
+     * Set numberTo
      *
-     * @param string $to
+     * @param string $numberTo
      *
      * @return SmsList
      */
-    public function setTo($to)
+    public function setNumberTo($numberTo)
     {
-        $this->to = $to;
+        $this->numberTo = $numberTo;
 
         return $this;
     }
 
     /**
-     * Get to
+     * Get numberTo
      *
      * @return string
      */
-    public function getTo()
+    public function getNumberTo()
     {
-        return $this->to;
+        return $this->numberTo;
     }
 
     /**
@@ -160,50 +160,50 @@ class SmsList
     }
 
     /**
-     * Set when
+     * Set networkTimestamp
      *
-     * @param \DateTime $when
+     * @param \DateTime $networkTimestamp
      *
      * @return SmsList
      */
-    public function setWhen($when)
+    public function setNetworkTimestamp($networkTimestamp)
     {
-        $this->when = $when;
+        $this->networkTimestamp = $networkTimestamp;
 
         return $this;
     }
 
     /**
-     * Get when
+     * Get networkTimestamp
      *
      * @return \DateTime
      */
-    public function getWhen()
+    public function getNetworkTimestamp()
     {
-        return $this->when;
+        return $this->networkTimestamp;
     }
 
     /**
-     * Set used
+     * Set parsed
      *
-     * @param integer $used
+     * @param integer $parsed
      *
      * @return SmsList
      */
-    public function setUsed($used)
+    public function setParsed($parsed)
     {
-        $this->used = $used;
+        $this->parsed = $parsed;
 
         return $this;
     }
 
     /**
-     * Get used
+     * Get parsed
      *
      * @return integer
      */
-    public function getUsed()
+    public function getParsed()
     {
-        return $this->used;
+        return $this->parsed;
     }
 }

@@ -13,18 +13,17 @@ class SmsController extends Controller
 
     public function indexAction($network, $number, Request $request)
     {
+        $em = $this->get('doctrine')->getEntityManager();
 
-        $doctrine = $this->getDoctrine();
-        $em = $doctrine->getEntityManager();
-
-        $requestParams = $request->query->all();
+        $iParams = $request->query->all();
 
         $list = new SmsList();
-        $list->setFrom($requestParams['msisdn']);
-        $list->setTo($requestParams['to']);
-        $list->setMessageText($requestParams['text']);
-        $list->setMessageId($requestParams['messageId']);
-        $list->setWhen(new \DateTime($requestParams['message-timestamp']));
+        $list->setNumberFrom($iParams['msisdn']);
+        $list->setNumberTo($iParams['to']);
+        $list->setMessageText($iParams['text']);
+        $list->setMessageId($iParams['messageId']);
+        $list->setNetworkTimestamp(new \DateTime($iParams['message-timestamp']));
+        $list->setParsed(0);
 
         $em->persist($list);
         $em->flush();
