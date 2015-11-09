@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Madrivo\WarmerBundle\Entity\SmsListRepository")
+ * @ORM\HasLifecycleCallbacks
  */
 class SmsList
 {
@@ -45,6 +46,11 @@ class SmsList
      * @ORM\Column(type="datetime", nullable=true)
      */
     protected $when;
+
+    /**
+    * @ORM\Column(type="integer", nullable=false)
+    */
+    protected $used;
 
 
     /**
@@ -175,5 +181,29 @@ class SmsList
     public function getWhen()
     {
         return $this->when;
+    }
+
+    /**
+     * Set used
+     *
+     * @param integer $used
+     *
+     * @return SmsList
+     */
+    public function setUsed($used)
+    {
+        $this->used = $used;
+
+        return $this;
+    }
+
+    /**
+     * Get used
+     *
+     * @return integer
+     */
+    public function getUsed()
+    {
+        return $this->used;
     }
 }
