@@ -5,3 +5,7 @@ madrivo_warmer_homepage:
 madrivo_warmer_sms_callback:
     path: /sms/{network}/{number}/callback
     defaults: { _controller: MadrivoWarmerBundle:Sms:index }
+
+madrivo_warmer_sms_read:
+    path: /read/{network}/{number}
+    defaults: { _controller: MadrivoWarmerBundle:Sms:read }

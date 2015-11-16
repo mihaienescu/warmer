@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Madrivo\WarmerBundle\Entity\SmsList;
-
+use Madrivo\WarmerBundle\Entity\SmsListRepository;
 
 class SmsController extends Controller
 {
@@ -34,4 +34,25 @@ class SmsController extends Controller
 
         return JsonResponse::create('OK');
     }
+	
+	public function readAction($network, $number)
+	{
+		$em = $this->get('doctrine')->getEntityManager();
+		
+		$result = $em->getRepository('MadrivoWarmerBundle:SmsList')
+		->getLastUnreadMessageByNumber($number);
+		
+		if (null == $result) {
+			return JsonResponse::create("EMPTY");
+		}
+		
+		$text = $result->getMessageText();
+		
+		$result->setParsed(1);
+		
+		$em->persist($result);
+		$em->flush();
+		
+		return JsonResponse::create($text);
+	}
 }

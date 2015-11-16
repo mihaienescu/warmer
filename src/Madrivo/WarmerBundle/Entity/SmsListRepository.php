@@ -10,4 +10,13 @@ namespace Madrivo\WarmerBundle\Entity;
  */
 class SmsListRepository extends \Doctrine\ORM\EntityRepository
 {
+	public function getLastUnreadMessageByNumber($number)
+	{
+		$query = $this->getEntityManager()
+			->createQuery('SELECT s FROM MadrivoWarmerBundle:SmsList s WHERE s.numberTo = :to AND s.parsed = :parsed ORDER BY s.id DESC')
+			->setParameter("to", $number)
+			->setParameter("parsed", 0);
+		
+		return $query->getOneOrNullResult();
+	}
 }
